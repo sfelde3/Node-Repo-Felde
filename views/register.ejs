@@ -4,6 +4,15 @@
 <body>
     <%- include('partials/header') %>
     <h2>Registrierung</h2>
+
+    <!--Feller/erfolg anzeigen-->
+    <% if (error) {%>
+        <div class = "alert alert-danger"><%= error %></div>
+        <%} %>
+    <% if (success) { %>
+            <div class="alert alert-success"><%= success %></div>
+    <% } %>
+
     <form action="/register" method="POST">
         <label for="username">Benutzername:</label>
         <input type="text" id="username" name="username" required><br><br>
@@ -17,6 +26,10 @@
         <label for="password">Passwort:</label>
         <input type="password" id="password" name="password" required><br><br>
 
+         <!-- Neues Feld für Passwort bestätigen -->
+         <label for="confirmPassword">Passwort bestätigen:</label>
+         <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+         
         <button type="submit">Registrieren</button>
     </form>
     <%- include('partials/footer') %>
