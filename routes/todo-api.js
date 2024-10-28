@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
 
 // Create Todo (CREATE)
 router.post('/', async (req, res) => {
-    console.log('POST');
+    //console.log('POST');
     const { userId, text } = req.body;
 
     try {

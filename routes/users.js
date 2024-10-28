@@ -50,7 +50,7 @@ router.post('/register', async (req, res) => {
             { title: 'Erfolgreich registriert', success: `Sie haben sich erfolgreich registriert.`}
         );
     } catch (err) {
-        console.log(err);
+        console.error(err);
         return res.status(500).render('register',
         { title: 'Registrierung', error: 'Fehler bei der Registrierung',
             username: username, name: name, email: email}
@@ -72,7 +72,7 @@ router.post('/login', async (req, res) => {
     try {
         user = await conn.query('SELECT * FROM users WHERE username = ?', [username]);
     } catch (err) {
-        console.log(err);
+        console.error(err);
         return res.status(500).render('login', { title: 'Login', error: 'Fehler beim Login'});
     } finally {
     conn.release();
