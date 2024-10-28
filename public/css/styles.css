@@ -1,24 +1,41 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    padding: 20px;
-    background-color: white;
 }
-h2{
-    color: black;
+
+#todo-form .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-/*Erfolg und Fellermeldungen*/
-.alert{
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    text-align: center;
+
+#todo-input {
+    flex-grow: 1;
+    margin-right: 10px;
 }
-/*Feller*/
-.alert-danger{
-    color : white;
-    background-color: red;
+
+#todo-form .btn {
+    flex-shrink: 0;
 }
-.alert-success{
-    color: white;
-    background-color: green;
+
+#todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#todo-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-weight: bold;
+}
+
+#todo-list li .todo-list-buttons .btn {
+    margin-left: 10px;
+}
+
+#todo-list li.completed {
+  text-decoration: line-through;
+  font-weight: normal;
 }
